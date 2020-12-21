@@ -2,13 +2,17 @@
   "name": "mege",
   "version": "0.0.1",
   "description": "",
-  "author": "wangzhenxi",
+  "author": "wangzhenxi <im@joshwong.cn>",
   "license": "MIT",
+  "private": true,
   "scripts": {
+    "start": "node ./scripts/start.js",
     "test": "jest",
     "fix": "yarn prettier . --write"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/eslint-parser": "^7.12.1",
     "eslint": "^7.16.0",
     "eslint-config-airbnb-standard": "^3.1.0",
     "eslint-config-prettier": "^7.1.0",
@@ -17,6 +21,13 @@
     "jest": "^26.6.3",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">= 12.14.0",
+    "yarn": ">=1.22.5"
   },
   "husky": {
     "hooks": {

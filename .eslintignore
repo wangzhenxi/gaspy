@@ -1,0 +1,7 @@
+/dist
+/.git
+package.json
+lerna.json
+!.eslintrc.js
+
+packages/*/dist

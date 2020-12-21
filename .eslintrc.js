@@ -1,5 +1,10 @@
 module.exports = {
   root: true,
+  parser: '@babel/eslint-parser',
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
   extends: ['airbnb-standard', 'prettier'],
   overrides: [
     {
@@ -17,4 +22,9 @@ module.exports = {
       },
     },
   ],
+  rules: {
+    'no-empty': ['error', { allowEmptyCatch: true }],
+    'global-require': 'off',
+    'import/no-dynamic-require': 'off',
+  },
 }
