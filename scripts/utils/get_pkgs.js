@@ -19,13 +19,8 @@ function getSubDeps(subRoot, container = []) {
     const inf = {
       name: pkg.name,
       root: subRoot,
-      ts: false,
       deps: [],
     }
-    try {
-      fs.statSync(path.join(subRoot, 'src', 'index.ts'))
-      inf.ts = true
-    } catch {}
     const deps = [
       ...Object.keys(pkg.devDependencies),
       ...Object.keys(pkg.dependencies),
