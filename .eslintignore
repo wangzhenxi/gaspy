@@ -1,7 +1,7 @@
-/dist
+/lib
 /.git
 package.json
 lerna.json
 !.eslintrc.js
 
-packages/*/dist
+packages/*/lib
