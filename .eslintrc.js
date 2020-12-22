@@ -26,5 +26,6 @@ module.exports = {
     'no-empty': ['error', { allowEmptyCatch: true }],
     'global-require': 'off',
     'import/no-dynamic-require': 'off',
+    'no-underscore-dangle': 'off',
   },
 }

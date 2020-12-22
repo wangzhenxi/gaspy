@@ -10,6 +10,10 @@
     "test": "jest",
     "fix": "yarn prettier . --write"
   },
+  "dependencies": {
+    "commander": "^6.2.1",
+    "portfinder": "^1.0.28"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/eslint-parser": "^7.12.1",
