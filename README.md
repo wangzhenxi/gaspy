@@ -4,7 +4,7 @@
 
 ```bash
 yarn # 安装依赖
-yarn bootstrap # 预装配置文件
+yarn bootstrap # 预装配置文件和编译模块
 yarn start -p 8080 # 启动项目
 ```
 
