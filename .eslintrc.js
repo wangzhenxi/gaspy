@@ -1,18 +1,19 @@
 module.exports = {
   root: true,
-  parser: '@babel/eslint-parser',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
   },
-  extends: ['airbnb-standard', 'prettier'],
+  plugins: ['import'],
+  extends: ['airbnb-standard', 'prettier', 'plugin:import/typescript'],
   overrides: [
     {
       files: ['packages/*/test/**/*.js', 'test/**/*.js'],
       env: {
         jest: true,
       },
-      plugins: ['jest'],
+      plugins: ['import', 'jest'],
       rules: {
         'jest/no-disabled-tests': 'warn',
         'jest/no-focused-tests': 'error',
@@ -27,5 +28,17 @@ module.exports = {
     'global-require': 'off',
     'import/no-dynamic-require': 'off',
     'no-underscore-dangle': 'off',
+    'func-names': 'off',
+    'import/prefer-default-export': 'off',
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
   },
 }

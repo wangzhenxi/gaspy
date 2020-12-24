@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "webpack配置",
   "author": "wangzhenxi <im@joshwong.cn>",
-  "main": "./src/index.js",
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {}

@@ -27,7 +27,10 @@ module.exports = function (api) {
 
   // Return the value that will be cached.
   return {
-    presets: [],
+    presets: [
+      ['@babel/preset-env', { targets: { node: 'current' } }],
+      '@babel/preset-typescript',
+    ],
     plugins: [],
   }
 }
