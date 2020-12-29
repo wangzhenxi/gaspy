@@ -4,7 +4,7 @@ const color = require('../utils/color')
 const getPkgs = require('../utils/get_pkgs')
 
 module.exports = function () {
-  const pkgs = getPkgs()
+  const pkgs = getPkgs({ sort: true })
 
   return Promise.all(
     pkgs.map(async (pkg) => {

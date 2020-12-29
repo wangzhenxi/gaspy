@@ -1,3 +1,8 @@
-import sum from './sum'
+function WebpackConfig() {
+  return {
+    entry: {},
+    ouput: {},
+  }
+}
 
-export { sum }
+export { WebpackConfig }

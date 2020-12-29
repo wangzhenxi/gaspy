@@ -1454,10 +1454,19 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mege/cli@workspace:packages/mege-cli"
   dependencies:
-    "@mege/webpack-config": "workspace:0.0.1"
+    "@mege/launch": "workspace:0.0.1"
     commander: ^6.2.1
+    portfinder: ^1.0.28
   bin:
     mege-cli: ./bin/mege-cli.js
+  languageName: unknown
+  linkType: soft
+
+"@mege/launch@workspace:0.0.1, @mege/launch@workspace:packages/mege-launch":
+  version: 0.0.0-use.local
+  resolution: "@mege/launch@workspace:packages/mege-launch"
+  dependencies:
+    "@mege/webpack-config": "workspace:0.0.1"
   languageName: unknown
   linkType: soft
 

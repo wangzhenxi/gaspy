@@ -1,0 +1,12 @@
+{
+  "name": "@mege/launch",
+  "version": "0.0.1",
+  "description": "启动器",
+  "author": "wangzhenxi <im@joshwong.cn>",
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@mege/webpack-config": "workspace:0.0.1"
+  }
+}

@@ -1,3 +1,3 @@
-import sum from './sum'
+import { getPort } from './utils/get_port'
 
-export { sum }
+export { getPort }
