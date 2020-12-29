@@ -1,5 +1,7 @@
 const path = require('path')
 const fs = require('fs')
+const log = require('../utils/log')
+const color = require('../utils/color')
 const getPkgs = require('../utils/get_pkgs')
 
 module.exports = function () {
@@ -13,6 +15,7 @@ module.exports = function () {
     } catch {}
     if (hasMegeconfig) return
 
+    log(`Writing megeconfig: ${color.blue(pkg.root)}`)
     // 写入megeconfig.json文件
     fs.writeFileSync(
       path.join(pkg.root, 'megeconfig.json'),
@@ -24,5 +27,6 @@ module.exports = function () {
         2
       )
     )
+    log(`WriteUp megeconfig: ${color.blue(pkg.root)}`)
   })
 }

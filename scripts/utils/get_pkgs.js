@@ -18,12 +18,13 @@ function getSubDeps(subRoot, container = []) {
   } else {
     const inf = {
       name: pkg.name,
+      description: pkg.description,
       root: subRoot,
       deps: [],
     }
     const deps = [
-      ...Object.keys(pkg.devDependencies),
-      ...Object.keys(pkg.dependencies),
+      ...Object.keys(pkg.devDependencies || {}),
+      ...Object.keys(pkg.dependencies || {}),
     ].filter((dep) => dep.startsWith('@mege/'))
     inf.deps = deps
     container.push(inf)
