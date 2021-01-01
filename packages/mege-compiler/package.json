@@ -1,9 +1,12 @@
 {
-  "name": "@mege/webpack-config",
+  "name": "@mege/compiler",
   "version": "0.0.1",
-  "description": "webpack配置",
+  "description": "编译器",
   "author": "wangzhenxi <im@joshwong.cn>",
   "main": "./lib/index.js",
   "exports": "./lib/index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^5.11.1"
+  }
 }

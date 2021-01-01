@@ -10,8 +10,9 @@
   "exports": "./lib/index.js",
   "license": "MIT",
   "dependencies": {
-    "@mege/launch": "workspace:0.0.1",
+    "@mege/launcher": "workspace:0.0.1",
     "commander": "^6.2.1",
+    "inquirer": "^7.3.3",
     "portfinder": "^1.0.28"
   }
 }

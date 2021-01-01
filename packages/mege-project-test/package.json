@@ -5,8 +5,5 @@
   "author": "wangzhenxi <im@joshwong.cn>",
   "main": "./lib/index.js",
   "exports": "./lib/index.js",
-  "license": "MIT",
-  "dependencies": {
-    "@mege/cli": "workspace:0.0.1"
-  }
+  "license": "MIT"
 }

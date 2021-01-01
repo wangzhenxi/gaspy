@@ -10,7 +10,7 @@ program
   .description('启动模块')
   .option('-p, --port <port>', '启动端口', '')
   .option('-sh, --selectHook', '选择钩子', false)
-  .option('-hk, --hook <hook>', '默认钩子', 'devServer')
+  .option('-hk, --hook <hook>', '默认钩子', 'serve')
   .option('-m, --module <module>', '启动模块', '')
 
 // 初始化配置
@@ -54,7 +54,7 @@ async function selectHook(selectable, defaulthook, mod) {
     .readdirSync(path.join(mod.root, 'ci'))
     .map((filename) => filename.slice(0, /\./.exec(filename).index))
   if (!selectable && hooks.includes(defaulthook)) return defaulthook
-  const choices = ['bootstrap', 'devServer', 'build', 'deploy']
+  const choices = ['bootstrap', 'serve', 'build', 'deploy']
     .filter((hookname) => hooks.includes(hookname))
     .map((hookname) => ({
       name: hookname,
