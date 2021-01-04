@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
-const path = require('path')
 const program = require('commander')
-const { Launcher } = require('@mege/launcher')
-const { getPort, selectModule } = require('../lib')
+const { serve, bootstrap } = require('../lib')
 
 console.log('welcome to mege-cli!!!')
 
@@ -22,30 +20,12 @@ program
   .option('-m, --module <module>', '启动模块', '')
   .action(async (input) => {
     const _options = input.opts()
-    const mod = await selectModule(input.module)
-    const hookCallback = require(`${path.join(mod.root, 'ci', 'serve')}`)
-    // 配置预处理
-    let options = await initOptions(_options)
-    // 配置二次处理
-    options = await hookCallback(options)
-    const launcher = await new Launcher(options, mod)
-    launcher.run()
+    serve(_options)
   })
 
+program.command('bootstrap').action(async (input) => {
+  const _options = input.opts()
+  bootstrap(_options)
+})
+
 program.parse(process.argv)
-
-// 初始化配置
-async function initOptions({ port }, pkg) {
-  const options = {}
-
-  // 初始化端口
-  let _port = port
-  if (!_port) {
-    _port = await getPort(_port)
-  } else {
-    _port = Number(_port)
-  }
-  options.port = _port
-
-  return options
-}
