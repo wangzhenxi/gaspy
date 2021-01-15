@@ -1,4 +1,7 @@
+import path from 'path'
+import fs from 'fs'
 import { Compiler } from '@mege/compiler'
+import { getRootPkg, findPkg } from '@mege/tool'
 import { ILauncher, LauncherOptions } from '../types'
 import { Gateway } from './Gateway'
 
@@ -7,34 +10,58 @@ class Launcher implements ILauncher {
 
   gateway = null
 
-  constructor(options: LauncherOptions, pkg, megeconfig) {
+  constructor(options: LauncherOptions) {
     const gateway = new Gateway(options)
     this.gateway = gateway
+  }
+
+  async init(mod, options, megeconfig) {
     // 基础代理
     if (megeconfig.devServer && megeconfig.devServer.proxy) {
-      this.proxy(megeconfig.devServer.proxy)
+      Object.entries(megeconfig.devServer.proxy).forEach(([name, opt]) => {
+        this.gateway.proxy(name, opt)
+      })
     }
     // 生成编译器
-    // TODO
-    // this.generateCompiler(options, pkg)
+    await this.generateCompiler(mod, options)
   }
 
-  proxy(proxys) {
-    Object.entries(proxys).forEach(([name, opt]) => {
-      this.gateway.proxy(name, opt)
+  async generateCompiler(mod, options) {
+    const rootPkgName = getRootPkg().name
+    const workspaces = mod.deps.filter((name) =>
+      new RegExp(`@${rootPkgName}`).test(name)
+    )
+    const pkgs = findPkg(workspaces).filter((pkg) => {
+      // 获取有开发钩子的模块
+      const hookpath = path.join(pkg.root, 'ci', 'serve.js')
+      try {
+        fs.statSync(hookpath)
+        return true
+      } catch {
+        return false
+      }
     })
-  }
-
-  generateCompiler(options, pkg) {
-    const compilers = pkg.deps.map((dep) => {
-      const compiler = new Compiler(options, dep)
-      return compiler
-    })
+    const compilers = await Promise.all(
+      pkgs.map(async (pkg) => {
+        const compiler = new Compiler(options, pkg)
+        await compiler.init()
+        // 静态资源代理
+        this.gateway.proxy(
+          [`/test`, `/test/(.*)`],
+          {
+            root: path.join(pkg.root, 'dist'),
+          },
+          'static'
+        )
+        return compiler
+      })
+    )
     this.compilers = compilers
   }
 
-  run() {
-    this.gateway.run()
+  async run() {
+    await Promise.all(this.compilers.map((compiler) => compiler.run()))
+    await this.gateway.run()
   }
 }
 

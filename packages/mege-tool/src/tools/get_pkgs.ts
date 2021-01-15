@@ -1,9 +1,12 @@
 import fs from 'fs'
 import path from 'path'
 import { Pkg } from '../../types'
-import { GetPkgsOptions } from '../../types/utils/get_pkgs'
+import { GetPkgsOptions } from '../../types/tools/get_pkgs'
+import getRootPkg from './get_root_pkg'
 
-let rootPkgName = ''
+const rootPkg = getRootPkg()
+
+const rootPkgName = rootPkg.name
 
 function getSubPkgs(subRoot, container = []): Pkg[] {
   // 获取依赖树
@@ -12,11 +15,12 @@ function getSubPkgs(subRoot, container = []): Pkg[] {
     pkg = require(`${subRoot}/package.json`)
   } catch {}
   if (!pkg) {
-    const dirs = fs
-      .readdirSync(subRoot)
-      .filter((dir) => dir.startsWith(`${rootPkgName}-`))
+    const dirs = fs.readdirSync(subRoot)
     dirs.forEach((dir) => {
-      getSubPkgs(path.join(subRoot, dir), container)
+      const dirpath = path.join(subRoot, dir)
+      const stat = fs.statSync(dirpath)
+      if (!stat.isDirectory()) return
+      getSubPkgs(dirpath, container)
     })
   } else {
     const inf = {
@@ -55,12 +59,10 @@ function sortPkgs(pkgs): Pkg[] {
   return ret
 }
 
-function getPkgs(options: GetPkgsOptions = {}) {
+// 获取所有依赖包
+function getPkgs(options: GetPkgsOptions = {}): Pkg[] {
   const { sort = false } = options
-  const root = process.cwd() || process.env.MEGE_ROOT
-  const rootPkg = require(path.join(root, 'package.json'))
-  rootPkgName = rootPkg.name
-  const target = path.join(root, 'packages')
+  const target = path.join(rootPkg.root, 'packages')
   let pkgs = getSubPkgs(target)
   if (sort) {
     pkgs = sortPkgs(pkgs)
@@ -68,4 +70,4 @@ function getPkgs(options: GetPkgsOptions = {}) {
   return pkgs
 }
 
-export { getPkgs }
+export default getPkgs

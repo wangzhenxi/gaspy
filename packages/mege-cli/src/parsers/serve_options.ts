@@ -1,4 +1,4 @@
-import { getPort } from '../utils/get_port'
+import { getPort } from '@mege/tool'
 import { ServeOptions } from '../../types/parser/serve_options'
 
 // 初始化配置

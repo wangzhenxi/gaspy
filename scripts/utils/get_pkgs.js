@@ -10,11 +10,12 @@ function getSubDeps(subRoot, container = []) {
     pkg = require(`${subRoot}/package.json`)
   } catch {}
   if (!pkg) {
-    const dirs = fs
-      .readdirSync(subRoot)
-      .filter((dir) => dir.startsWith('mege-'))
+    const dirs = fs.readdirSync(subRoot)
     dirs.forEach((dir) => {
-      getSubDeps(path.join(subRoot, dir), container)
+      const dirpath = path.join(subRoot, dir)
+      const stat = fs.statSync(dirpath)
+      if (!stat.isDirectory()) return
+      getSubDeps(dirpath, container)
     })
   } else {
     const inf = {

@@ -1,7 +1,5 @@
 import path from 'path'
-import log from '../utils/log'
-import color from '../utils/color'
-import { getPkgs } from '../utils/get_pkgs'
+import { log, color, getPkgs } from '@mege/tool'
 
 function generateLib() {
   const pkgs = getPkgs({ sort: true })

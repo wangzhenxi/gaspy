@@ -23,13 +23,15 @@ function getMegeconfig(root) {
 
 async function serve(input) {
   const mod = await selectModule(input.module)
-  const hookCallback = require(`${path.join(mod.root, 'ci', 'serve')}`)
+  const hookCallback = require(path.join(mod.root, 'ci', 'serve'))
   const megeconfig = getMegeconfig(mod.root)
   // 配置预处理
   let options = await initOptions(input)
   // 配置二次处理
   options = await hookCallback(options)
-  const launcher = await new Launcher(options, mod, megeconfig)
+  const launcher = new Launcher(options)
+  // 启动器初始化
+  await launcher.init(mod, options, megeconfig)
   launcher.run()
 }
 

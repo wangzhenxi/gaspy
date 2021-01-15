@@ -7,4 +7,4 @@ async function getPort() {
   return port
 }
 
-export { getPort }
+export default getPort

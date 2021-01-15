@@ -1,6 +1,6 @@
 import inquirer from 'inquirer'
-import { getPkgs } from './get_pkgs'
-import { Pkg } from '../../types'
+import { getPkgs } from '@mege/tool'
+import { Pkg } from '@mege/tool/types'
 
 // 选择模块
 async function selectModule(modulename): Promise<Pkg> {

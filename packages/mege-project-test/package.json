@@ -1,9 +1,0 @@
-{
-  "name": "@mege/project-test",
-  "version": "0.0.1",
-  "description": "project-test",
-  "author": "wangzhenxi <im@joshwong.cn>",
-  "main": "./lib/index.js",
-  "exports": "./lib/index.js",
-  "license": "MIT"
-}
