@@ -26,14 +26,16 @@ yarn start
 
 ### 命名
 
-`packages`下的包目录名需以根`package.json`的`name`属性为前缀
+- `packages`下的包目录名需以根`package.json`的`name`属性为前缀
+- 需构建的页面的包名规则为`@rootname-page/xxx`
 
 ### 目录结构
 
 ```
 mege
 ├── packages
-|   └── mege-xxx
+|   ├── mege-xxx # xxx模块
+|   └── mege-page-xxx #页面
 |       └── src
 |           └── index.ts # 默认入口文件
 └── package.json

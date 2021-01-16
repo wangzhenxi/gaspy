@@ -9,7 +9,9 @@
     "bootstrap": "node ./scripts/bootstrap",
     "start": "node ./scripts/start.js",
     "test": "jest",
-    "fix": "yarn prettier . --write"
+    "fix": "yarn prettier . --write",
+    "dev": "yarn workspaces foreach run dev",
+    "publish": "yarn workspaces foreach npm publish"
   },
   "dependencies": {
     "chalk": "^4.1.0",

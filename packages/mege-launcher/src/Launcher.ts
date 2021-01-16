@@ -45,9 +45,10 @@ class Launcher implements ILauncher {
       pkgs.map(async (pkg) => {
         const compiler = new Compiler(options, pkg)
         await compiler.init()
+        const subpath = pkg.name.replace(`@${rootPkgName}/`, '')
         // 静态资源代理
         this.gateway.proxy(
-          [`/test`, `/test/(.*)`],
+          [`/${subpath}`, `/${subpath}/(.*)`],
           {
             root: path.join(pkg.root, 'dist'),
           },

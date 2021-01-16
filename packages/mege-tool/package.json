@@ -6,6 +6,9 @@
   "main": "./lib/index.js",
   "exports": "./lib/index.js",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "npx tsc --module commonjs --watch"
   },
