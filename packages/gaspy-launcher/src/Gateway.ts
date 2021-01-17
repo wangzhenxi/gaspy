@@ -2,6 +2,7 @@ import Koa from 'koa'
 import Router from 'koa-router'
 import httpProxy from 'koa-proxies'
 import staticSend from 'koa-send'
+import { log } from '@gaspy/tool'
 import { IGateway } from '../types/Gateway'
 
 export class Gateway implements IGateway {
@@ -60,7 +61,7 @@ export class Gateway implements IGateway {
   run() {
     this.routerRegister()
     this.app.listen(this.port, () => {
-      console.log(`gateway: http://localhost:${this.port}`)
+      log(`gateway: http://localhost:${this.port}`)
     })
   }
 }

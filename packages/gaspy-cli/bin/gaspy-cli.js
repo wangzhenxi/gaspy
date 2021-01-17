@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
 const program = require('commander')
+const { log } = require('@gaspy/tool')
 const { serve, bootstrap } = require('../lib')
 
-console.log('welcome to gaspy-cli!!!')
+log('welcome to gaspy-cli!!!')
 
 program
   .command('init')
-  .description('初始化webpack配置')
+  .description('初始化仓库')
   .action((input) => {
     const _options = input.opts()
     console.log('init', _options)
@@ -23,9 +24,12 @@ program
     serve(_options)
   })
 
-program.command('bootstrap').action(async (input) => {
-  const _options = input.opts()
-  bootstrap(_options)
-})
+program
+  .command('bootstrap')
+  .description('模块基础配置引导程序')
+  .action(async (input) => {
+    const _options = input.opts()
+    bootstrap(_options)
+  })
 
 program.parse(process.argv)

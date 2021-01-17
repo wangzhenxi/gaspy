@@ -18,6 +18,7 @@
     "dev": "npx tsc --module commonjs --watch"
   },
   "dependencies": {
+    "@gaspy/tool": "workspace:packages/gaspy-tool",
     "webpack": "^5.11.1"
   }
 }

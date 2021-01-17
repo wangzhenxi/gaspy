@@ -1,5 +1,6 @@
 import path from 'path'
 import Webpack from 'webpack'
+import { log } from '@gaspy/tool'
 import { ICompiler } from '../types'
 
 class Compiler implements ICompiler {
@@ -7,7 +8,7 @@ class Compiler implements ICompiler {
 
   config = null
 
-  constructor(options, pkg) {
+  constructor(pkg) {
     this.pkg = pkg
     const defaultConfig = {
       entry: path.join(pkg.root, 'src', 'index.ts'),
@@ -29,9 +30,14 @@ class Compiler implements ICompiler {
   run() {
     const webpackCompiler = Webpack(this.config)
     webpackCompiler.run(() => {
-      console.log('编译成功!')
+      log(`编译成功 ${this.pkg.name}`)
     })
     return webpackCompiler
+  }
+
+  // 摧毁实例
+  destroy() {
+    console.log('TODO', this.pkg)
   }
 }
 
