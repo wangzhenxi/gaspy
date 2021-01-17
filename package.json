@@ -5,13 +5,17 @@
   "author": "wangzhenxi <im@joshwong.cn>",
   "license": "MIT",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangzhenxi/gaspy.git"
+  },
   "scripts": {
     "bootstrap": "node ./scripts/bootstrap",
     "start": "node ./scripts/start.js",
     "test": "jest",
     "fix": "yarn prettier . --write",
     "dev": "yarn workspaces foreach run dev",
-    "publish": "yarn workspaces foreach npm publish"
+    "publish": "yarn workspaces foreach --exclude gaspy npm publish --tolerate-republish"
   },
   "dependencies": {
     "chalk": "^4.1.0",

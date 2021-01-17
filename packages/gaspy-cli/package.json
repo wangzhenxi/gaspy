@@ -9,6 +9,11 @@
   "main": "./lib/index.js",
   "exports": "./lib/index.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangzhenxi/gaspy.git",
+    "directory": "packages/gaspy-cli"
+  },
   "publishConfig": {
     "access": "public"
   },
