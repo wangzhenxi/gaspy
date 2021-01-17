@@ -1,11 +1,8 @@
 {
-  "name": "@mege/cli",
+  "name": "@gaspy/compiler",
   "version": "0.0.1",
-  "description": "cli",
+  "description": "编译器",
   "author": "wangzhenxi <im@joshwong.cn>",
-  "bin": {
-    "mege-cli": "./bin/mege-cli.js"
-  },
   "main": "./lib/index.js",
   "exports": "./lib/index.js",
   "license": "MIT",
@@ -16,10 +13,6 @@
     "dev": "npx tsc --module commonjs --watch"
   },
   "dependencies": {
-    "@mege/launcher": "workspace:0.0.1",
-    "@mege/tool": "workspace:0.0.1",
-    "commander": "^6.2.1",
-    "inquirer": "^7.3.3",
-    "shelljs": "^0.8.4"
+    "webpack": "^5.11.1"
   }
 }

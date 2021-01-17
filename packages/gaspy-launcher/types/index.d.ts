@@ -1,4 +1,4 @@
-import { ICompiler } from '@mege/compiler/types'
+import { ICompiler } from '@gaspy/compiler/types'
 import { Gateway } from './Gateway.d'
 
 export interface LauncherOptions {

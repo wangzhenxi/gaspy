@@ -8,17 +8,17 @@ module.exports = function () {
   const pkgs = getPkgs()
 
   pkgs.forEach((pkg) => {
-    let hasMegeconfig = false
+    let hasGaspyconfig = false
     try {
-      fs.statSync(path.join(pkg.root, 'megeconfig.json'))
-      hasMegeconfig = true
+      fs.statSync(path.join(pkg.root, 'gaspyconfig.json'))
+      hasGaspyconfig = true
     } catch {}
-    if (hasMegeconfig) return
+    if (hasGaspyconfig) return
 
-    log(`Writing megeconfig: ${color.blue(pkg.root)}`)
-    // 写入megeconfig.json文件
+    log(`Writing gaspyconfig: ${color.blue(pkg.root)}`)
+    // 写入gaspyconfig.json文件
     fs.writeFileSync(
-      path.join(pkg.root, 'megeconfig.json'),
+      path.join(pkg.root, 'gaspyconfig.json'),
       JSON.stringify(
         {
           runtime: false,
@@ -27,6 +27,6 @@ module.exports = function () {
         2
       )
     )
-    log(`WriteUp megeconfig: ${color.blue(pkg.root)}`)
+    log(`WriteUp gaspyconfig: ${color.blue(pkg.root)}`)
   })
 }

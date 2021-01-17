@@ -27,7 +27,7 @@ function getSubDeps(subRoot, container = []) {
     const deps = [
       ...Object.keys(pkg.devDependencies || {}),
       ...Object.keys(pkg.dependencies || {}),
-    ].filter((dep) => dep.startsWith('@mege/'))
+    ].filter((dep) => dep.startsWith('@gaspy/'))
     inf.deps = deps
     container.push(inf)
   }

@@ -1,6 +1,6 @@
 import path from 'path'
 import fs from 'fs'
-import { log, color, getPkgs } from '@mege/tool'
+import { log, color, getPkgs } from '@gaspy/tool'
 
 function generateTsconfig() {
   const pkgs = getPkgs()

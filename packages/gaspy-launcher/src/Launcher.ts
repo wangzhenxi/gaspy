@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
-import { Compiler } from '@mege/compiler'
-import { getRootPkg, findPkg } from '@mege/tool'
+import { Compiler } from '@gaspy/compiler'
+import { getRootPkg, findPkg } from '@gaspy/tool'
 import { ILauncher, LauncherOptions } from '../types'
 import { Gateway } from './Gateway'
 
@@ -15,10 +15,10 @@ class Launcher implements ILauncher {
     this.gateway = gateway
   }
 
-  async init(mod, options, megeconfig) {
+  async init(mod, options, gaspyconfig) {
     // 基础代理
-    if (megeconfig.devServer && megeconfig.devServer.proxy) {
-      Object.entries(megeconfig.devServer.proxy).forEach(([name, opt]) => {
+    if (gaspyconfig.devServer && gaspyconfig.devServer.proxy) {
+      Object.entries(gaspyconfig.devServer.proxy).forEach(([name, opt]) => {
         this.gateway.proxy(name, opt)
       })
     }

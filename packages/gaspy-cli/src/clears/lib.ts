@@ -1,6 +1,6 @@
 import path from 'path'
 import shell from 'shelljs'
-import { log, color, getPkgs } from '@mege/tool'
+import { log, color, getPkgs } from '@gaspy/tool'
 
 function clearLib() {
   const pkgs = getPkgs()

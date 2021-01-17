@@ -1,5 +1,5 @@
 import path from 'path'
-import { log, color, getPkgs } from '@mege/tool'
+import { log, color, getPkgs } from '@gaspy/tool'
 
 function generateLib() {
   const pkgs = getPkgs({ sort: true })

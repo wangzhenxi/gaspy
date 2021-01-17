@@ -3,7 +3,7 @@
 const program = require('commander')
 const { serve, bootstrap } = require('../lib')
 
-console.log('welcome to mege-cli!!!')
+console.log('welcome to gaspy-cli!!!')
 
 program
   .command('init')

@@ -1,4 +1,4 @@
-# mege
+# gaspy
 
 轻松管理monorepo + 微前端的项目
 
@@ -32,10 +32,10 @@ yarn start
 ### 目录结构
 
 ```
-mege
+gaspy
 ├── packages
-|   ├── mege-xxx # xxx模块
-|   └── mege-page-xxx #页面
+|   ├── gaspy-xxx # xxx模块
+|   └── gaspy-page-xxx #页面
 |       └── src
 |           └── index.ts # 默认入口文件
 └── package.json

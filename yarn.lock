@@ -1235,6 +1235,51 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gaspy/cli@workspace:packages/gaspy-cli":
+  version: 0.0.0-use.local
+  resolution: "@gaspy/cli@workspace:packages/gaspy-cli"
+  dependencies:
+    "@gaspy/launcher": "workspace:0.0.1"
+    "@gaspy/tool": "workspace:0.0.1"
+    commander: ^6.2.1
+    inquirer: ^7.3.3
+    shelljs: ^0.8.4
+  bin:
+    gaspy-cli: ./bin/gaspy-cli.js
+  languageName: unknown
+  linkType: soft
+
+"@gaspy/compiler@workspace:0.0.1, @gaspy/compiler@workspace:packages/gaspy-compiler":
+  version: 0.0.0-use.local
+  resolution: "@gaspy/compiler@workspace:packages/gaspy-compiler"
+  dependencies:
+    webpack: ^5.11.1
+  languageName: unknown
+  linkType: soft
+
+"@gaspy/launcher@workspace:0.0.1, @gaspy/launcher@workspace:packages/gaspy-launcher":
+  version: 0.0.0-use.local
+  resolution: "@gaspy/launcher@workspace:packages/gaspy-launcher"
+  dependencies:
+    "@gaspy/compiler": "workspace:0.0.1"
+    "@gaspy/tool": "workspace:0.0.1"
+    koa: ^2.13.0
+    koa-proxies: ^0.11.0
+    koa-router: ^10.0.0
+    koa-send: ^5.0.1
+  languageName: unknown
+  linkType: soft
+
+"@gaspy/tool@workspace:0.0.1, @gaspy/tool@workspace:packages/gaspy-tool":
+  version: 0.0.0-use.local
+  resolution: "@gaspy/tool@workspace:packages/gaspy-tool"
+  dependencies:
+    chalk: ^4.1.0
+    fancy-log: ^1.3.3
+    portfinder: ^1.0.28
+  languageName: unknown
+  linkType: soft
+
 "@istanbuljs/load-nyc-config@npm:^1.0.0":
   version: 1.1.0
   resolution: "@istanbuljs/load-nyc-config@npm:1.1.0"
@@ -1449,54 +1494,6 @@ __metadata:
   checksum: 5c511d7807f414b298299ae4a053abf265f39984942e0eefdfb17a7986a36f1047e0fd9a6f785bdddbf7343a5737595dfabe148719a80e118dd77486502009cc
   languageName: node
   linkType: hard
-
-"@mege/cli@workspace:packages/mege-cli":
-  version: 0.0.0-use.local
-  resolution: "@mege/cli@workspace:packages/mege-cli"
-  dependencies:
-    "@mege/launcher": "workspace:0.0.1"
-    "@mege/tool": "workspace:0.0.1"
-    chalk: ^4.1.0
-    commander: ^6.2.1
-    fancy-log: ^1.3.3
-    inquirer: ^7.3.3
-    portfinder: ^1.0.28
-    shelljs: ^0.8.4
-  bin:
-    mege-cli: ./bin/mege-cli.js
-  languageName: unknown
-  linkType: soft
-
-"@mege/compiler@workspace:0.0.1, @mege/compiler@workspace:packages/mege-compiler":
-  version: 0.0.0-use.local
-  resolution: "@mege/compiler@workspace:packages/mege-compiler"
-  dependencies:
-    webpack: ^5.11.1
-  languageName: unknown
-  linkType: soft
-
-"@mege/launcher@workspace:0.0.1, @mege/launcher@workspace:packages/mege-launcher":
-  version: 0.0.0-use.local
-  resolution: "@mege/launcher@workspace:packages/mege-launcher"
-  dependencies:
-    "@mege/compiler": "workspace:0.0.1"
-    "@mege/tool": "workspace:0.0.1"
-    koa: ^2.13.0
-    koa-proxies: ^0.11.0
-    koa-router: ^10.0.0
-    koa-send: ^5.0.1
-  languageName: unknown
-  linkType: soft
-
-"@mege/tool@workspace:0.0.1, @mege/tool@workspace:packages/mege-tool":
-  version: 0.0.0-use.local
-  resolution: "@mege/tool@workspace:packages/mege-tool"
-  dependencies:
-    chalk: ^4.1.0
-    fancy-log: ^1.3.3
-    portfinder: ^1.0.28
-  languageName: unknown
-  linkType: soft
 
 "@nodelib/fs.scandir@npm:2.1.3":
   version: 2.1.3
@@ -4590,6 +4587,39 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
+"gaspy@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "gaspy@workspace:."
+  dependencies:
+    "@babel/core": ^7.12.10
+    "@babel/preset-env": ^7.12.11
+    "@babel/preset-typescript": ^7.12.7
+    "@types/jest": ^26.0.19
+    "@typescript-eslint/parser": ^4.11.0
+    chalk: ^4.1.0
+    commander: ^6.2.1
+    eslint: ^7.16.0
+    eslint-config-airbnb-standard: ^3.1.0
+    eslint-config-prettier: ^7.1.0
+    eslint-import-resolver-node: ^0.3.4
+    eslint-plugin-import: ^2.22.1
+    eslint-plugin-jest: ^24.1.3
+    eslint-plugin-jsx-a11y: ^6.4.1
+    eslint-plugin-node: ^11.1.0
+    eslint-plugin-react: ^7.21.5
+    eslint-plugin-standard: latest
+    fancy-log: ^1.3.3
+    husky: ^4.3.6
+    inquirer: ^7.3.3
+    jest: ^26.6.3
+    lint-staged: ^10.5.3
+    portfinder: ^1.0.28
+    prettier: ^2.2.1
+    shelljs: ^0.8.4
+    typescript: ^4.1.3
+  languageName: unknown
+  linkType: soft
+
 "gauge@npm:~2.7.3":
   version: 2.7.4
   resolution: "gauge@npm:2.7.4"
@@ -6538,39 +6568,6 @@ fsevents@^2.1.2:
   checksum: be1c825782df7f38eebd451d778f6407bb15a59c8807a69e7f2ad74a25440e474536441c6bf583fdf2803ea23b866e91ff68f565cda297211dd89147758c8df3
   languageName: node
   linkType: hard
-
-"mege@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "mege@workspace:."
-  dependencies:
-    "@babel/core": ^7.12.10
-    "@babel/preset-env": ^7.12.11
-    "@babel/preset-typescript": ^7.12.7
-    "@types/jest": ^26.0.19
-    "@typescript-eslint/parser": ^4.11.0
-    chalk: ^4.1.0
-    commander: ^6.2.1
-    eslint: ^7.16.0
-    eslint-config-airbnb-standard: ^3.1.0
-    eslint-config-prettier: ^7.1.0
-    eslint-import-resolver-node: ^0.3.4
-    eslint-plugin-import: ^2.22.1
-    eslint-plugin-jest: ^24.1.3
-    eslint-plugin-jsx-a11y: ^6.4.1
-    eslint-plugin-node: ^11.1.0
-    eslint-plugin-react: ^7.21.5
-    eslint-plugin-standard: latest
-    fancy-log: ^1.3.3
-    husky: ^4.3.6
-    inquirer: ^7.3.3
-    jest: ^26.6.3
-    lint-staged: ^10.5.3
-    portfinder: ^1.0.28
-    prettier: ^2.2.1
-    shelljs: ^0.8.4
-    typescript: ^4.1.3
-  languageName: unknown
-  linkType: soft
 
 "merge-stream@npm:^2.0.0":
   version: 2.0.0

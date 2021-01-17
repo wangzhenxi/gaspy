@@ -1,8 +1,11 @@
 {
-  "name": "@mege/launcher",
+  "name": "@gaspy/cli",
   "version": "0.0.1",
-  "description": "启动器",
+  "description": "cli",
   "author": "wangzhenxi <im@joshwong.cn>",
+  "bin": {
+    "gaspy-cli": "./bin/gaspy-cli.js"
+  },
   "main": "./lib/index.js",
   "exports": "./lib/index.js",
   "license": "MIT",
@@ -13,11 +16,10 @@
     "dev": "npx tsc --module commonjs --watch"
   },
   "dependencies": {
-    "@mege/compiler": "workspace:0.0.1",
-    "@mege/tool": "workspace:0.0.1",
-    "koa": "^2.13.0",
-    "koa-proxies": "^0.11.0",
-    "koa-router": "^10.0.0",
-    "koa-send": "^5.0.1"
+    "@gaspy/launcher": "workspace:0.0.1",
+    "@gaspy/tool": "workspace:0.0.1",
+    "commander": "^6.2.1",
+    "inquirer": "^7.3.3",
+    "shelljs": "^0.8.4"
   }
 }
