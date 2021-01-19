@@ -2,7 +2,7 @@ import path from 'path'
 import fs from 'fs'
 import { Compiler } from '@gaspy/compiler'
 import { getRootPkg, getPkgs, log } from '@gaspy/tool'
-import gaze from 'gaze'
+import { Gaze } from 'gaze'
 import { ILauncher, LauncherOptions } from '../types'
 import { Gateway } from './Gateway'
 
@@ -32,12 +32,13 @@ function watchCompiler(pkg) {
   // 主动触发
   gaspyswitchChanged()
   // 监听文件触发
-  gaze(gaspyswitch, (err, watcher) => {
-    if (err) {
-      log(`gaze ${pkg.name} error: ${err}`)
-    }
-    watcher.on('changed', gaspyswitchChanged)
-  })
+  const watcher = new Gaze(gaspyswitch)
+  watcher
+    .on('error', (err) => {
+      log(`gaze ${pkg.name} error`)
+      console.log(err)
+    })
+    .on('changed', gaspyswitchChanged)
 }
 class Launcher implements ILauncher {
   gateway = null
