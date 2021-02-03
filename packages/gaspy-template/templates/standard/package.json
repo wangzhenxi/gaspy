@@ -1,0 +1,22 @@
+{
+    "name": "<%= options.appName %>",
+    "version": "0.0.1",
+    "description": "<%= options.description %>",
+    "private": true,
+    "scripts": {
+      "bootstrap": "gaspy-cli bootstrap",
+      "serve": "gaspy-cli serve",
+      "build": "gaspy-cli build",
+      "test": "gaspy-cli test"
+    },
+    "workspaces": [
+      "packages/*"
+    ],
+    "engines": {
+      "node": ">= 12.14.0",
+      "yarn": ">=2.4.0"
+    },
+    "devDependencies": {
+      "@gaspy/cli": "<%= gaspy.cliVersion %>"
+    }
+  }

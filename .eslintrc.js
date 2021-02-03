@@ -40,5 +40,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'no-shadow': 'off', // TODO: ts lint bug
+    'no-unused-vars': 'off', // TODO: ts lint bug
   },
 }

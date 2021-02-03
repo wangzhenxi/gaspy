@@ -1,0 +1,8 @@
+{
+  "name": "@<%= options.appName %>-page/bar",
+  "version": "0.0.1",
+  "description": "bar页面",
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
+  "license": "MIT"
+}

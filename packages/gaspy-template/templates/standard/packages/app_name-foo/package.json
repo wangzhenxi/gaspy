@@ -1,0 +1,8 @@
+{
+  "name": "@<%= options.appName %>-page/foo",
+  "version": "0.0.1",
+  "description": "foo页面",
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
+  "license": "MIT"
+}
