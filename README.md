@@ -11,8 +11,11 @@ yarn
 # 预装配置文件和编译模块
 yarn bootstrap
 
-# 启动项目
-yarn start
+# 本地开发
+yarn dev
+
+# 打包
+yarn build
 ```
 
 ## 代码规范

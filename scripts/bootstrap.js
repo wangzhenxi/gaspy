@@ -1,5 +1,4 @@
 const generateTsconfig = require('./generators/ts_config')
-const generateLib = require('./generators/lib')
 const clearLib = require('./clearLib')
 
 ;(async () => {
@@ -8,7 +7,4 @@ const clearLib = require('./clearLib')
 
   // 清空lib
   await clearLib()
-
-  // 编译模块
-  await generateLib()
 })()

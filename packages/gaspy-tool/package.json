@@ -14,9 +14,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "dev": "npx tsc --module commonjs --watch"
-  },
   "dependencies": {
     "chalk": "^4.1.0",
     "fancy-log": "^1.3.3",

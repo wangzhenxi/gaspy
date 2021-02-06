@@ -14,9 +14,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "dev": "npx tsc --module commonjs --watch"
-  },
   "dependencies": {
     "ejs": "^3.1.5",
     "globby": "^11.0.2"
