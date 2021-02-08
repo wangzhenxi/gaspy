@@ -1,6 +1,6 @@
 {
   "name": "@gaspy/template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "模版库",
   "author": "wangzhenxi <im@joshwong.cn>",
   "main": "./lib/index.js",

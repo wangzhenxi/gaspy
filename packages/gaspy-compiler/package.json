@@ -1,6 +1,6 @@
 {
   "name": "@gaspy/compiler",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "编译器",
   "author": "wangzhenxi <im@joshwong.cn>",
   "main": "./lib/index.js",
@@ -11,11 +11,14 @@
     "url": "https://github.com/wangzhenxi/gaspy.git",
     "directory": "packages/compiler"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "npx tsc --module commonjs --watch"
   },
   "dependencies": {
-    "@gaspy/tool": "workspace:packages/gaspy-tool",
+    "@gaspy/tool": "workspace:^0.0.2",
     "webpack": "^5.11.1"
   }
 }

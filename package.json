@@ -15,7 +15,7 @@
     "fix": "yarn prettier . --write",
     "dev": "node ./scripts/dev.js",
     "build": "node ./scripts/build.js",
-    "publish": "yarn workspaces foreach --exclude gaspy npm publish --tolerate-republish"
+    "release": "node ./scripts/publish.js"
   },
   "dependencies": {
     "chalk": "^4.1.0",
