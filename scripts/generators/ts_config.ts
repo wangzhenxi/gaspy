@@ -1,10 +1,10 @@
-const path = require('path')
-const fs = require('fs')
-const log = require('../utils/log')
-const color = require('../utils/color')
-const getPkgs = require('../utils/get_pkgs')
+import path from 'path'
+import fs from 'fs'
+import log from '../utils/log'
+import color from '../utils/color'
+import getPkgs from '../utils/get_pkgs'
 
-module.exports = function () {
+export default function () {
   const pkgs = getPkgs()
   const root = path.join(__dirname, '../../')
 

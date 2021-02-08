@@ -10,12 +10,12 @@
     "url": "https://github.com/wangzhenxi/gaspy.git"
   },
   "scripts": {
-    "bootstrap": "node ./scripts/bootstrap",
+    "bootstrap": "ts-node ./scripts/bootstrap",
     "test": "jest",
     "fix": "yarn prettier . --write",
-    "dev": "node ./scripts/dev.js",
-    "build": "node ./scripts/build.js",
-    "release": "node ./scripts/publish.js"
+    "dev": "ts-node ./scripts/dev.js",
+    "build": "ts-node ./scripts/build.js",
+    "release": "ts-node ./scripts/publish.js"
   },
   "dependencies": {
     "chalk": "^4.1.0",
@@ -45,6 +45,7 @@
     "jest": "^26.6.3",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   },
   "workspaces": [

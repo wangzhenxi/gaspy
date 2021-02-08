@@ -1,5 +1,5 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
 
 const root = path.resolve(__dirname, '../../')
 
@@ -54,7 +54,11 @@ function sortDeps(pkgs) {
   return ret
 }
 
-function getDeps(options = {}) {
+interface Options {
+  sort?: boolean // 是否根据依赖关系排序
+}
+
+function getDeps(options: Options = {}) {
   const { sort = false } = options
   const target = path.join(root, 'packages')
   let deps = getSubDeps(target)
@@ -64,4 +68,4 @@ function getDeps(options = {}) {
   return deps
 }
 
-module.exports = getDeps
+export default getDeps

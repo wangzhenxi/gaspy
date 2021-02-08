@@ -1,5 +1,5 @@
-const generateTsconfig = require('./generators/ts_config')
-const clearLib = require('./clearLib')
+import generateTsconfig from './generators/ts_config'
+import clearLib from './clearLib'
 
 ;(async () => {
   // 生成tsconfig.json

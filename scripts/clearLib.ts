@@ -4,7 +4,7 @@ const log = require('./utils/log')
 const color = require('./utils/color')
 const getPkgs = require('./utils/get_pkgs')
 
-module.exports = function () {
+export default function () {
   const pkgs = getPkgs()
 
   return Promise.all(
