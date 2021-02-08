@@ -13,9 +13,9 @@
     "bootstrap": "ts-node ./scripts/bootstrap",
     "test": "jest",
     "fix": "yarn prettier . --write",
-    "dev": "ts-node ./scripts/dev.js",
-    "build": "ts-node ./scripts/build.js",
-    "release": "ts-node ./scripts/publish.js"
+    "dev": "ts-node ./scripts/dev.ts",
+    "build": "ts-node ./scripts/build.ts",
+    "release": "ts-node ./scripts/publish.ts"
   },
   "dependencies": {
     "chalk": "^4.1.0",

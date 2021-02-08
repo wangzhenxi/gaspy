@@ -7,7 +7,7 @@ import { TemplateType } from '../types'
 const templateDir = path.join(__dirname, '../templates')
 
 const gaspyOptions = {
-  cliVersion: '0.0.2',
+  cliVersion: '0.0.3',
 }
 
 function render(dirpath, filepath, options = {}) {

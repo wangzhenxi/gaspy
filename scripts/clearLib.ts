@@ -1,8 +1,8 @@
-const path = require('path')
-const shell = require('shelljs')
-const log = require('./utils/log')
-const color = require('./utils/color')
-const getPkgs = require('./utils/get_pkgs')
+import * as path from 'path'
+import * as shell from 'shelljs'
+import log from './utils/log'
+import color from './utils/color'
+import getPkgs from './utils/get_pkgs'
 
 export default function () {
   const pkgs = getPkgs()

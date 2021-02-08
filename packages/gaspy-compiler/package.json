@@ -1,6 +1,6 @@
 {
   "name": "@gaspy/compiler",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "编译器",
   "author": "wangzhenxi <im@joshwong.cn>",
   "main": "./lib/index.js",
@@ -18,7 +18,7 @@
     "dev": "npx tsc --module commonjs --watch"
   },
   "dependencies": {
-    "@gaspy/tool": "workspace:^0.0.2",
+    "@gaspy/tool": "workspace:^0.0.3",
     "webpack": "^5.11.1"
   }
 }

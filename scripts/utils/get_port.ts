@@ -1,4 +1,4 @@
-import portfinder from 'portfinder'
+import * as portfinder from 'portfinder'
 
 portfinder.basePort = 3000
 

@@ -1,7 +1,7 @@
-const { spawnSync } = require('child_process')
-const getDeps = require('./utils/get_pkgs')
-const log = require('./utils/log')
-const color = require('./utils/color')
+import { spawnSync } from 'child_process'
+import getDeps from './utils/get_pkgs'
+import log from './utils/log'
+import color from './utils/color'
 
 const pkgs = getDeps({ sort: true })
 pkgs.forEach((pkg) => {

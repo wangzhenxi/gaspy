@@ -1,3 +1,3 @@
-import log from 'fancy-log'
+import * as log from 'fancy-log'
 
 export default log

@@ -1,6 +1,6 @@
-const { spawn } = require('child_process')
-const path = require('path')
-const getDeps = require('./utils/get_pkgs')
+import { spawn } from 'child_process'
+import * as path from 'path'
+import getDeps from './utils/get_pkgs'
 
 const pkgs = getDeps()
 pkgs.forEach((pkg) => {
