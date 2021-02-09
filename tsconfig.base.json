@@ -3,7 +3,7 @@
     "target": "esnext",
     "module": "esnext",
     "lib": ["esnext"],
-    // "declaration": true,
+    "declaration": true,
     // "declarationMap": true,
     // "emitDeclarationOnly": true,
     // "composite": true,

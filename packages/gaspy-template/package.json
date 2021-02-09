@@ -1,6 +1,6 @@
 {
   "name": "@gaspy/template",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "模版库",
   "author": "wangzhenxi <im@joshwong.cn>",
   "main": "./lib/index.js",
@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/wangzhenxi/gaspy.git",
-    "directory": "packages/template"
+    "directory": "packages/gaspy-template"
   },
   "publishConfig": {
     "access": "public"

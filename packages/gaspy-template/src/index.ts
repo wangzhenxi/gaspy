@@ -2,12 +2,28 @@ import path from 'path'
 import fs from 'fs'
 import ejs from 'ejs'
 import globby from 'globby'
-import { TemplateType } from '../types'
+
+enum TemplateType {
+  Standard,
+}
 
 const templateDir = path.join(__dirname, '../templates')
 
 const gaspyOptions = {
-  cliVersion: '0.0.3',
+  cliVersion: '0.0.5',
+}
+
+function getTemplateTypeDir(type) {
+  let subdir = ''
+  switch (type) {
+    case TemplateType.Standard:
+      subdir = 'standard'
+      break
+    default:
+      throw new Error(`未知模版标识: ${type}`)
+  }
+  const dirpath = path.join(templateDir, subdir)
+  return dirpath
 }
 
 function render(dirpath, filepath, options = {}) {
@@ -28,7 +44,7 @@ export class Template {
   }
 
   async output(options) {
-    const dirpath = path.join(templateDir, this.type)
+    const dirpath = getTemplateTypeDir(this.type)
     const filepaths = await globby(['**/*'], { cwd: dirpath })
     const files = {}
     filepaths.forEach((filepath) => {

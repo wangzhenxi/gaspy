@@ -1,7 +1,11 @@
 import path from 'path'
-import Webpack from 'webpack'
+import Webpack, { Configuration } from 'webpack'
 import { log } from '@gaspy/tool'
-import { ICompiler } from '../types'
+
+interface ICompiler {
+  config: Configuration
+  run: any
+}
 
 class Compiler implements ICompiler {
   pkg = null

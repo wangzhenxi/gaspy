@@ -1,5 +1,8 @@
 import { getPort } from '@gaspy/tool'
-import { ServeOptions } from '../../types/parser/serve_options'
+
+interface ServeOptions {
+  port: number
+}
 
 // 初始化配置
 async function initOptions({ port }): Promise<ServeOptions> {

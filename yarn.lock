@@ -1227,9 +1227,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@gaspy/cli@workspace:packages/gaspy-cli"
   dependencies:
-    "@gaspy/launcher": "workspace:^0.0.3"
-    "@gaspy/template": "workspace:^0.0.3"
-    "@gaspy/tool": "workspace:^0.0.3"
+    "@gaspy/launcher": "workspace:^0.0.4"
+    "@gaspy/template": "workspace:^0.0.4"
+    "@gaspy/tool": "workspace:^0.0.4"
+    "@gaspy/types": "workspace:^0.0.4"
     commander: ^6.2.1
     inquirer: ^7.3.3
     shelljs: ^0.8.4
@@ -1239,21 +1240,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@gaspy/compiler@workspace:^0.0.3, @gaspy/compiler@workspace:packages/gaspy-compiler":
+"@gaspy/compiler@workspace:^0.0.4, @gaspy/compiler@workspace:packages/gaspy-compiler":
   version: 0.0.0-use.local
   resolution: "@gaspy/compiler@workspace:packages/gaspy-compiler"
   dependencies:
-    "@gaspy/tool": "workspace:^0.0.3"
+    "@gaspy/tool": "workspace:^0.0.4"
+    "@gaspy/types": "workspace:^0.0.4"
     webpack: ^5.11.1
   languageName: unknown
   linkType: soft
 
-"@gaspy/launcher@workspace:^0.0.3, @gaspy/launcher@workspace:packages/gaspy-launcher":
+"@gaspy/launcher@workspace:^0.0.4, @gaspy/launcher@workspace:packages/gaspy-launcher":
   version: 0.0.0-use.local
   resolution: "@gaspy/launcher@workspace:packages/gaspy-launcher"
   dependencies:
-    "@gaspy/compiler": "workspace:^0.0.3"
-    "@gaspy/tool": "workspace:^0.0.3"
+    "@gaspy/compiler": "workspace:^0.0.4"
+    "@gaspy/tool": "workspace:^0.0.4"
+    "@gaspy/types": "workspace:^0.0.4"
     gaze: ^1.1.3
     koa: ^2.13.0
     koa-proxies: ^0.11.0
@@ -1262,22 +1265,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@gaspy/template@workspace:^0.0.3, @gaspy/template@workspace:packages/gaspy-template":
+"@gaspy/template@workspace:^0.0.4, @gaspy/template@workspace:packages/gaspy-template":
   version: 0.0.0-use.local
   resolution: "@gaspy/template@workspace:packages/gaspy-template"
   dependencies:
+    "@gaspy/types": "workspace:^0.0.4"
     ejs: ^3.1.5
     globby: ^11.0.2
   languageName: unknown
   linkType: soft
 
-"@gaspy/tool@workspace:^0.0.3, @gaspy/tool@workspace:packages/gaspy-tool":
+"@gaspy/tool@workspace:^0.0.4, @gaspy/tool@workspace:packages/gaspy-tool":
   version: 0.0.0-use.local
   resolution: "@gaspy/tool@workspace:packages/gaspy-tool"
   dependencies:
+    "@gaspy/types": "workspace:^0.0.4"
     chalk: ^4.1.0
     fancy-log: ^1.3.3
     portfinder: ^1.0.28
+  languageName: unknown
+  linkType: soft
+
+"@gaspy/types@workspace:^0.0.4, @gaspy/types@workspace:packages/gaspy-types":
+  version: 0.0.0-use.local
+  resolution: "@gaspy/types@workspace:packages/gaspy-types"
   languageName: unknown
   linkType: soft
 

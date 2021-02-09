@@ -3,8 +3,15 @@ import fs from 'fs'
 import { Compiler } from '@gaspy/compiler'
 import { getRootPkg, getPkgs, log } from '@gaspy/tool'
 import { Gaze } from 'gaze'
-import { ILauncher, LauncherOptions } from '../types'
 import { Gateway } from './Gateway'
+
+interface LauncherOptions {
+  port: number
+}
+
+interface ILauncher {
+  gateway: Gateway
+}
 
 // 编译器实例注册中心
 const compilierRegister = {}

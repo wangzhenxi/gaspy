@@ -1,7 +1,7 @@
 import log from './log'
 import color from './color'
 
-function exit(error, options) {
+function exit(error, options?) {
   const { code = 1, noExit = false } = options || {}
 
   if (Array.isArray(error)) {

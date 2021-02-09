@@ -1,8 +1,11 @@
 import fs from 'fs'
 import path from 'path'
-import { Pkg } from '../../types'
-import { GetPkgsOptions } from '../../types/tools/get_pkgs'
 import getRootPkg from './get_root_pkg'
+import { Pkg } from '../../types'
+
+interface GetPkgsOptions {
+  sort?: boolean
+}
 
 const rootPkg = getRootPkg()
 

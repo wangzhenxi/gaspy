@@ -3,7 +3,11 @@ import Router from 'koa-router'
 import httpProxy from 'koa-proxies'
 import staticSend from 'koa-send'
 import { log } from '@gaspy/tool'
-import { IGateway } from '../types/Gateway'
+
+interface IGateway {
+  app: any
+  port: number
+}
 
 export class Gateway implements IGateway {
   app = null
