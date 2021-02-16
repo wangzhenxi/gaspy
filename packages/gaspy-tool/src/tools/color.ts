@@ -1,3 +1,3 @@
-import * as color from 'chalk'
+import color from 'chalk'
 
 export default color
