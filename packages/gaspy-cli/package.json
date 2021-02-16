@@ -1,6 +1,6 @@
 {
   "name": "@gaspy/cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "cli",
   "author": "wangzhenxi <im@joshwong.cn>",
   "bin": {
@@ -18,9 +18,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@gaspy/launcher": "workspace:^0.0.5",
-    "@gaspy/template": "workspace:^0.0.5",
-    "@gaspy/tool": "workspace:^0.0.5",
+    "@gaspy/launcher": "workspace:0.0.6",
+    "@gaspy/template": "workspace:0.0.6",
+    "@gaspy/tool": "workspace:0.0.6",
     "commander": "^6.2.1",
     "inquirer": "^7.3.3",
     "shelljs": "^0.8.4",
