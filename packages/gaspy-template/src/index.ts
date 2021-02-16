@@ -45,7 +45,11 @@ export class Template {
 
   async output(options) {
     const dirpath = getTemplateTypeDir(this.type)
-    const filepaths = await globby(['**/*'], { cwd: dirpath })
+    const filepaths = await globby(['**/*'], {
+      cwd: dirpath,
+      dot: true,
+      gitignore: true,
+    })
     const files = {}
     filepaths.forEach((filepath) => {
       const targetpath = filepath.replace(/app_name/, options.appName)
