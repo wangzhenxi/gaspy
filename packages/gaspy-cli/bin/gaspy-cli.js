@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+// 环境变量预设
+require('./init-variable')
+
 const program = require('commander')
 const { log } = require('@gaspy/tool')
 const { create, bootstrap, serve } = require('../lib')

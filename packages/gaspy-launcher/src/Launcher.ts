@@ -13,27 +13,24 @@ interface ILauncher {
   gateway: Gateway
 }
 
-// 编译器实例注册中心
-const compilierRegister = {}
-
 function watchCompiler(pkg) {
+  // 注册编译器
+  const compiler = new Compiler(pkg)
   const gaspyswitch = path.join(pkg.root, 'gaspyswitch.json')
   const gaspyswitchChanged = async () => {
     const json = require(gaspyswitch)
+    delete require.cache[gaspyswitch]
     if (json.runtime) {
-      if (compilierRegister[pkg.name]) return
-      log(`开始编译 ${pkg.name}`)
-      // 初始化编译器
-      const compiler = new Compiler(pkg)
-      compilierRegister[pkg.name] = compiler
-      await compiler.init()
+      if (!compiler.inited) {
+        log(`开始编译 ${pkg.name}`)
+      }
       // 执行编译器
       await compiler.run()
     } else {
-      if (!compilierRegister[pkg.name]) return
-      log(`关闭编译 ${pkg.name}`)
-      await compilierRegister[pkg.name].destroy()
-      delete compilierRegister[pkg.name]
+      if (compiler.inited) {
+        log(`关闭编译 ${pkg.name}`)
+      }
+      await compiler.destroy()
     }
   }
   // 主动触发

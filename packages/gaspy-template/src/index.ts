@@ -2,6 +2,7 @@ import path from 'path'
 import fs from 'fs'
 import ejs from 'ejs'
 import globby from 'globby'
+import { env } from '@gaspy/tool'
 
 enum TemplateType {
   Standard,
@@ -10,7 +11,7 @@ enum TemplateType {
 const templateDir = path.join(__dirname, '../templates')
 
 const gaspyOptions = {
-  cliVersion: '0.0.5',
+  cliVersion: env.GASPY_CLI_VERSION,
 }
 
 function getTemplateTypeDir(type) {
