@@ -1,6 +1,7 @@
 import path from 'path'
 import Webpack, { Configuration } from 'webpack'
 import { log, exit, env } from '@gaspy/tool'
+import DefaultConfig from './DefaultConfig'
 
 interface ICompiler {
   config: Configuration
@@ -16,16 +17,9 @@ class Compiler implements ICompiler {
 
   watching = null
 
-  constructor(pkg) {
+  constructor(pkg, gaspyconfig?) {
     this.pkg = pkg
-    const defaultConfig = {
-      mode: env.NODE_ENV,
-      entry: path.join(pkg.root, 'src', 'index.ts'),
-      output: {
-        path: path.join(pkg.root, 'dist'),
-        filename: '[name].js',
-      },
-    }
+    const defaultConfig = new DefaultConfig(pkg, gaspyconfig)
     this.config = defaultConfig
   }
 
