@@ -1,0 +1,20 @@
+{
+  "name": "@gaspy/plugin-vue-ssr",
+  "version": "0.0.1",
+  "description": "Vue服务端渲染中间件",
+  "author": "wangzhenxi <im@joshwong.cn>",
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangzhenxi/gaspy.git",
+    "directory": "packages/gaspy-plugin-vue-ssr"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.5"
+  }
+}

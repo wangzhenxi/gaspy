@@ -6,11 +6,10 @@ import { initOptions } from './parsers/serve_options'
 async function getGaspyconfig() {
   let gaspyconfig = {}
   const configfile = path.join(process.cwd(), 'gaspyconfig.js') // 从根节点获取配置
-  try {
-    fs.statSync(configfile)
+  if (fs.existsSync(configfile)) {
     const cb = require(configfile)
     gaspyconfig = cb()
-  } catch {}
+  }
 
   return gaspyconfig
 }

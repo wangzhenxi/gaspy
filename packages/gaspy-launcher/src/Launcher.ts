@@ -80,6 +80,12 @@ class Launcher implements ILauncher {
         this.gateway.proxy(name, opt)
       })
     }
+    // 引入中间件
+    if (gaspyconfig.middleware) {
+      gaspyconfig.middleware.forEach((middleware) => {
+        this.gateway.use(middleware)
+      })
+    }
     // 生成编译器
     await this.generateCompiler()
   }
@@ -103,10 +109,11 @@ class Launcher implements ILauncher {
         // 静态资源代理
         const subpath1 = pkg.name.replace(`@${rootPkgName}-page/`, '')
         const subpath2 = pkg.name.replace('@', '')
-        ;[
+        const subpaths = [
           [`/${subpath1}`, `/${subpath1}/(.*)`],
           [`/${subpath2}`, `/${subpath2}/(.*)`],
-        ].forEach((paths) =>
+        ]
+        subpaths.forEach((paths) =>
           this.gateway.proxy(
             paths,
             {
