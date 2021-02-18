@@ -2,13 +2,13 @@
 
 轻松管理monorepo + 微前端的项目
 
-## Usage
+## 开发指引
 
 ```bash
 # 安装依赖
 yarn
 
-# 预装配置文件和编译模块
+# 预装配置文件
 yarn bootstrap
 
 # 本地开发
@@ -16,6 +16,9 @@ yarn dev
 
 # 打包
 yarn build
+
+# npm包发布
+yarn release
 ```
 
 ## 代码规范
