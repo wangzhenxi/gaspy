@@ -1,6 +1,6 @@
 {
   "name": "@gaspy/template",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "模版库",
   "author": "wangzhenxi <im@joshwong.cn>",
   "main": "./lib/index.js",
@@ -15,7 +15,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@gaspy/tool": "workspace:0.0.6",
+    "@gaspy/tool": "workspace:0.0.7",
     "ejs": "^3.1.5",
     "globby": "^11.0.2"
   }
